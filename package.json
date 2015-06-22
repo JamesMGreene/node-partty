@@ -10,6 +10,9 @@
   "contributors": [
     {
       "name": "Christopher Jeffrey"
+    },
+    {
+      "name": "Peter Sunde"
     }
   ],
   "main": "./index.js",
@@ -32,13 +35,15 @@
   ],
   "scripts": {
     "preinstall": "( node -e 'process.exit(process.platform === \"win32\" ? 0 : 1);' && git submodule update --init --recursive ) || echo 'Submodule is not required as you are not running on Windows!'",
-    "test": "NODE_ENV=test mocha -R spec"
+    "test": "NODE_ENV=test grunt travis --verbose"
   },
   "dependencies": {
     "extend": "^1.3.0",
     "nan": "^1.8.4"
   },
   "devDependencies": {
-    "mocha": "^1.21.5"
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-mocha-cli": "^1.13.0"
   }
 }

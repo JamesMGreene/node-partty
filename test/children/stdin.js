@@ -1,3 +1,4 @@
+var tty = require('tty');
 var assert = require('assert');
 
 // testing reading data from stdin, since that's a crucial feature
@@ -26,6 +27,9 @@ var timeout = setTimeout(function() {
 }, 5000);
 
 process.on('exit', function(code) {
-  if (code === 7) return; // timeout
+  // timeout
+  if (code === 7) {
+    return;
+  }
   assert.equal(dataCount, 1);
 });

@@ -1,6 +1,7 @@
-var assert = require('assert');
+/*global describe, it */
+
 var partty = require('../');
-var mocha = require('mocha');
+var assert = require('assert');
 
 var tests = [
   {
@@ -34,7 +35,7 @@ var tests = [
 
 describe('partty', function() {
   tests.forEach(function(testCase) {
-    if (testCase.options.uid && testCase.options.gid && (process.platform == 'win32' || process.getgid() !== 0)) {
+    if (testCase.options.uid && testCase.options.gid && (process.platform === 'win32' || process.getgid() !== 0)) {
       // Skip tests that contains user impersonation if we are not able to do so.
       return it.skip(testCase.name);
     }
@@ -45,12 +46,14 @@ describe('partty', function() {
       // any output is considered failure. this is only a workaround
       // until the actual error code is passed through
       var count = 0;
-      term.on('data', function(data) {
+      term.on('data', function(/* data */) {
         count++;
       });
       term.on('exit', function() {
         // XXX Temporary until we find out why this gets emitted twice:
-        if (done.done) return;
+        if (done.done) {
+          return;
+        }
         done.done = true;
 
         assert.equal(count, 0);
