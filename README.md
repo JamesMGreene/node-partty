@@ -1,4 +1,5 @@
-# pty.js
+[![Build Status](https://travis-ci.org/JamesMGreene/node-partty.svg?branch=master)](https://travis-ci.org/JamesMGreene/node-partty) [![NPM version](https://badge.fury.io/js/partty.svg)](https://www.npmjs.com/package/partty)
+# partty
 
 Pseudo terminals for Node.js, with smart defaults.
 
