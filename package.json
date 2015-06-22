@@ -1,7 +1,7 @@
 {
   "name": "partty",
   "description": "Pseudo terminals for Node.js, with smart defaults",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "author": {
     "name": "James M. Greene",
     "email": "james.m.greene@gmail.com",
