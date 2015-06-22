@@ -8,7 +8,9 @@
     "url": "http://greene.io/"
   },
   "contributors": [
-    { "name": "Christopher Jeffrey" }
+    {
+      "name": "Christopher Jeffrey"
+    }
   ],
   "main": "./index.js",
   "repository": "git://github.com/JamesMGreene/node-partty.git",
@@ -16,10 +18,14 @@
   "bugs": {
     "url": "https://github.com/JamesMGreene/node-partty/issues"
   },
+  "engines": {
+    "node": ">=0.8.0 <=0.10.x"
+  },
   "keywords": [
     "pty",
     "tty",
     "terminal",
+    "pseudo",
     "pseudo terminal",
     "forkpty",
     "forkpty(3)"

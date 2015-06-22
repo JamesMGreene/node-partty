@@ -3,7 +3,6 @@ Default/*
 node_modules/*
 out/*
 build/*
-.lock-wscript
 Makefile.gyp
 *.swp
 *.Makefile

@@ -1,5 +1,8 @@
 /**
- * pty.js
+ * node-partty
+ * Copyright (c) 2015, James M. Greene (MIT License)
+ *
+ * pty.js:
  * Copyright (c) 2012-2015, Christopher Jeffrey (MIT License)
  *
  * pty.cc:
