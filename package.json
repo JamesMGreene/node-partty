@@ -1,7 +1,7 @@
 {
   "name": "partty",
   "description": "Pseudo terminals for Node.js, with smart defaults",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": {
     "name": "James M. Greene",
     "email": "james.m.greene@gmail.com",
@@ -21,6 +21,7 @@
   "bugs": {
     "url": "https://github.com/JamesMGreene/node-partty/issues"
   },
+  "license": "MIT",
   "engines": {
     "node": ">=0.8.0 <=0.10.x"
   },
@@ -35,6 +36,7 @@
   ],
   "scripts": {
     "preinstall": "( node -e 'process.exit(process.platform === \"win32\" ? 0 : 1);' && git submodule update --init --recursive ) || echo 'Submodule is not required as you are not running on Windows!'",
+    "install": "node-gyp rebuild",
     "test": "NODE_ENV=test grunt travis --verbose"
   },
   "dependencies": {
