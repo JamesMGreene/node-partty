@@ -23,10 +23,6 @@ var partty = require('partty');
 // set the option `snap` to `true`:
 var term = partty.spawn('bash', [], { snap: true });
 
-term.on('data', function(data) {
-  console.log(data);
-});
-
 term.write('ls\r');
 term.resize(100, 40);
 term.write('ls /\r');
@@ -54,7 +50,7 @@ var term =
   );
 
 term.on('data', function(data) {
-  console.log(data);
+  process.stdout.write(data);
 });
 
 term.write('ls\r');
