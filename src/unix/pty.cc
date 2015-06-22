@@ -186,7 +186,7 @@ NAN_METHOD(PtyFork) {
       return NanThrowError("forkpty(3) failed.");
     case 0:
       if (strlen(cwd) && chdir(cwd))
-        perror("chdir(2) failed: " + cwd);
+        perror("chdir(2) failed.");
 
       if (uid != -1 && gid != -1) {
         if (setgid(gid) == -1) {
