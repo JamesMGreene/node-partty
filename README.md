@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/JamesMGreene/node-partty.svg?branch=master)](https://travis-ci.org/JamesMGreene/node-partty) [![NPM version](https://badge.fury.io/js/partty.svg)](https://www.npmjs.com/package/partty)
-# partty
+# ParTTY
 
 Pseudo terminals for Node.js, with smart defaults.
 
@@ -17,27 +17,27 @@ This is useful for:
 ### Leveraging Smart Defaults
 
 ```js
-var partty = require('partty');
+var ParTTY = require('partty');
 
 // To leverage the smart defaults for sizing based on `process.stdout`,
 // set the option `snap` to `true`:
-var term = partty.spawn('bash', [], { snap: true });
+var term = ParTTY.spawn('bash', [], { snap: true });
+
+console.log('Launched ' + term.process + ' with PID ' + term.pid);
 
 term.write('ls\r');
 term.resize(100, 40);
 term.write('ls /\r');
-
-console.log(term.process);
 ```
 
 
 ### Exerting Manual Control
 
 ```js
-var partty = require('partty');
+var ParTTY = require('partty');
 
 var term =
-  partty.spawn(
+  ParTTY.spawn(
     'bash',
     [],
     {
@@ -53,11 +53,11 @@ term.on('data', function(data) {
   process.stdout.write(data);
 });
 
+console.log('Launched ' + term.process + ' with PID ' + term.pid);
+
 term.write('ls\r');
 term.resize(100, 40);
 term.write('ls /\r');
-
-console.log(term.process);
 ```
 
 
